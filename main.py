@@ -181,7 +181,7 @@ def main():
         description_presentation = f"<h2><strong>Présentation de l’application « {site_title} » :</strong></h2>\n\n<p>{summary[1]}</p>"
         description_techno = f"<h2><strong>Les technologies derrière « {site_title} » :</strong></h2>\n\n<p>{summary[2]}</p>"
 
-        image_url = generate_dalle_image(f"Illustration conceptuelle du site {site_title}")
+        image_url = generate_dalle_image(site_title, summary[1])  # Utilisation de la description complète
         image_id = upload_image_to_wordpress(image_url)
 
         create_wordpress_project(site_title, description_short, description_presentation, description_techno, image_id)
